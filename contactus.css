@@ -1,0 +1,133 @@
+/* ====== General Styling ====== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Dark Background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ====== Navigation Bar ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Right-Aligned Home Button */
+.home-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-left: auto;
+}
+
+.home-btn:hover {
+    background-color: #ff784e;
+}
+
+/* ====== Hero Section ====== */
+.contact-hero {
+    background: #1e1e1e;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.contact-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffbb33;
+}
+
+.contact-hero p {
+    font-size: 18px;
+}
+
+/* ====== Contact Form Section ====== */
+.contact-form-section {
+    width: 50%;
+    margin: 40px auto;
+    background: #252525;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    text-align: left;
+    color: #ffbb33;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background: #333;
+    color: white;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #ffbb33;
+}
+
+.submit-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #ff784e;
+    transform: scale(1.05);
+}
+
+/* ====== Footer ====== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: #ff5722;
+}

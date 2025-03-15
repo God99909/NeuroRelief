@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(203, 204, 204, 0.8);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        /* Main content styles */
+        body {
+            margin: 0;
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+            background: url('/img and video/loginbg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(96, 185, 245, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .form-container {
+            width: 200%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .form-box {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .input_box {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .input_box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .input_box .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: white;
+        }
+
+        .message_box {
+            margin-top: 10px;
+            color: white;
+        }
+
+        .login_btn {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login_btn:hover {
+            background: #0056b3;
+        }
+
+        .toggle-links a {
+            color: #00ffcc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#" class="logo"><img src="logo.png" alt="Logo"></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="contactUS.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container" id="form-container">
+            <!-- Login Form -->
+            <div class="form-box">
+                <h1>Login</h1>
+                <div class="input_box">
+                    <input type="email" id="login-email" placeholder="Email">
+                </div>
+
+                <div class="input_box">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <i class="fas fa-eye toggle-password" id="login-eye"></i>
+                </div>
+
+                <button class="login_btn">Login</button>
+                <p class="toggle-links">
+                    Don't have an account? <a id="register-link">Register</a>
+                </p>
+                <div class="message_box" id="login-message"></div>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form-box">
+                <h1>Register</h1>
+                <div class="input_box">
+                    <input type="email" id="register-email" placeholder="Email" autocomplete="email">
+                </div>
+
+                <div class="input_box">
+                    <input type="password" id="register-password" placeholder="Password">
+                    <i class="fas fa-eye toggle-password" id="register-eye"></i>
+                </div>
+
+                <button class="login_btn register_btn">Register</button>
+                <p class="toggle-links">
+                    Already have an account? <a id="login-link">Login</a>
+                </p>
+                <div class="message_box" id="register-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA5o3Vu1lhHKG1Kn5fKN45sZJXi1FRRTdM",
+            authDomain: "login-ca8bb.firebaseapp.com",
+            projectId: "login-ca8bb",
+            storageBucket: "login-ca8bb.appspot.com",
+            messagingSenderId: "915195802520",
+            appId: "1:915195802520:web:18b65f1504b7892dc771ed"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Login function
+        document.querySelector(".login_btn").addEventListener("click", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+            const message = document.getElementById("login-message");
+
+            signInWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                message.textContent = "Login Successful!";
+                message.style.color = "green";
+                setTimeout(() => window.location.href = "index2.html", 1000);
+            })
+            .catch((error) => {
+                message.textContent = "Login Failed: " + error.message;
+                message.style.color = "red";
+            });
+        });
+
+        // Register function
+        document.querySelector(".register_btn").addEventListener("click", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("register-email").value;
+            const password = document.getElementById("register-password").value;
+            const message = document.getElementById("register-message");
+
+            if (email === "" || password === "") {
+                message.textContent = "Fields cannot be empty!";
+                message.style.color = "red";
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                message.textContent = "Registration Successful!";
+                message.style.color = "green";
+                setTimeout(() => window.location.href = "index2.html", 1000);
+            })
+            .catch((error) => {
+                message.textContent = "Registration Failed: " + error.message;
+                message.style.color = "red";
+            });
+        });
+
+        // Toggle Login/Register Forms
+        document.getElementById("register-link").addEventListener("click", function() {
+            document.getElementById("form-container").style.transform = "translateX(-50%)";
+        });
+
+        document.getElementById("login-link").addEventListener("click", function() {
+            document.getElementById("form-container").style.transform = "translateX(0%)";
+        });
+
+        // Password Visibility Toggle
+        document.getElementById("login-eye").addEventListener("click", function() {
+            const passwordField = document.getElementById("login-password");
+            togglePasswordVisibility(passwordField, this);
+        });
+
+        document.getElementById("register-eye").addEventListener("click", function() {
+            const passwordField = document.getElementById("register-password");
+            togglePasswordVisibility(passwordField, this);
+        });
+
+        function togglePasswordVisibility(passwordField, icon) {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+
+</body>
+</html>

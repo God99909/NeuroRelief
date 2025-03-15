@@ -1,0 +1,107 @@
+/* ====== General Styling ====== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Dark Background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ====== Navigation Bar ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Right-Aligned Home Button */
+.home-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-left: auto;
+}
+
+.home-btn:hover {
+    background-color: #ff784e;
+}
+
+/* ====== Hero Section ====== */
+.privacy-hero {
+    background: #1e1e1e;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.privacy-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffbb33;
+}
+
+.privacy-hero p {
+    font-size: 18px;
+}
+
+/* ====== Privacy Content Section ====== */
+.privacy-content {
+    width: 70%;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.policy-section {
+    background: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    transition: transform 0.3s;
+}
+
+.policy-section:hover {
+    transform: scale(1.02);
+}
+
+.policy-section h2 {
+    color: #ffbb33;
+    font-size: 22px;
+}
+
+.policy-section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ====== Footer ====== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: #ff5722;
+}

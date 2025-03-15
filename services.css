@@ -1,0 +1,86 @@
+/* ====== Hero Section ====== */
+.services-hero {
+    background: #252525;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.services-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.services-hero p {
+    font-size: 18px;
+    color: #ffbb33;
+}
+
+/* ====== How It Works Section ====== */
+.how-it-works {
+    width: 70%;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.how-it-works h2 {
+    font-size: 28px;
+    color: #ff5722;
+    text-align: center;
+}
+
+.service-box {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+.service-box h3 {
+    color: #ffbb33;
+}
+
+.service-box p {
+    font-size: 16px;
+}
+
+/* ====== Call to Action ====== */
+.cta-section {
+    text-align: center;
+    margin: 40px auto;
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.cta-section h2 {
+    font-size: 26px;
+    color: #ff5722;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cta-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #ff784e;
+}

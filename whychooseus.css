@@ -1,0 +1,147 @@
+/* ====== General Styling ====== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;  /* Darker Background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ====== Navigation Bar ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Home Button Right-Aligned */
+.home-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-left: auto;  /* Push to the Right */
+}
+
+.home-btn:hover {
+    background-color: #ff784e;
+}
+
+/* ====== Hero Section ====== */
+.services-hero {
+    background: #1e1e1e;
+    padding: 50px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.services-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #ffbb33;
+}
+
+.services-hero p {
+    font-size: 18px;
+}
+
+/* ====== How It Works Section ====== */
+.how-it-works {
+    width: 70%;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.how-it-works h2 {
+    font-size: 28px;
+    color: #ff5722;
+    text-align: center;
+}
+
+.service-box {
+    background: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    transition: transform 0.3s;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+.service-box h3 {
+    color: #ffbb33;
+}
+
+.service-box p {
+    font-size: 16px;
+}
+
+/* ====== Call to Action ====== */
+.cta-section {
+    text-align: center;
+    margin: 40px auto;
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.cta-section h2 {
+    font-size: 26px;
+    color: #ff5722;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cta-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+    background-color: #ff784e;
+    transform: scale(1.05);
+}
+
+/* ====== Footer ====== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer a:hover {
+    color: #ff5722;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="img and video/logo.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="testNow.html">Start Your Journey</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Our Website</h1>
+      <p>Start your journey with us today!<br>With our personalized test feature.</p>
+      <a href="starttest.html">
+        <button class="test-now-btn">Test Now</button> 
+      </a>
+    </div>
+  </header>
+
+  <!-- Image Section -->
+  <section class="image-section">
+    <div class="image-container">
+      <div class="image-box">
+        <div class="image-item"><img src="img and video/img1.png" alt="Image 1"></div>
+        <div class="image-item"><img src="img and video/img2.png" alt="Image 2"></div>
+        <div class="image-item"><img src="img and video/img3.png" alt="Image 3"></div>
+        <div class="image-item"><img src="img and video/img4.png" alt="Image 4"></div>
+      </div>
+      <div class="clickable-text">
+        <a href="fullArticle/article3.html">Overwhelm</a>
+        <a href="fullArticle/article7.html">Mental Chaos</a>
+        <a href="fullArticle/article5.html">Exhaustion</a>
+        <a href="fullArticle/article2.html">Longing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-box">
+      <a href="contactUS.html"><button>Contact Us</button></a>
+      <a href="readMore.html"><button>Read More About Us</button></a>
+      <a href="why_choose_us.html"><button>Why Choose Us</button></a>
+      <a href="privacypolicy.html"><button>Privacy Policy</button></a>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBZP6WpQu5oDFGQOX6l4WLgARKHJu8WrZ8",
+      authDomain: "neurorelief-3843d.firebaseapp.com",
+      projectId: "neurorelief-3843d",
+      storageBucket: "neurorelief-3843d.appspot.com",
+      messagingSenderId: "674281193670",
+      appId: "1:674281193670:web:7e7f2bcc72de0267a817c7",
+      measurementId: "G-3VNF1DRXZN"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    console.log("✅ Firebase Loaded Successfully:", app);
+
+    async function storeTestResults(userName, yesCount, maybeCount, noCount, depressionScore, message) {
+      try {
+        const docRef = doc(db, "testResults", userName);
+        await setDoc(docRef, {
+          userName: userName,
+          yesCount: yesCount,
+          maybeCount: maybeCount,
+          noCount: noCount,
+          depressionScore: depressionScore,
+          resultMessage: message,
+          timestamp: serverTimestamp()
+        });
+        console.log("✅ Test result saved successfully!");
+      } catch (error) {
+        console.error("❌ Error saving test result:", error);
+      }
+    }
+
+    storeTestResults("TestUser", 5, 3, 2, "7.5", "You have moderate depression symptoms.");
+  </script>
+
+</body>
+</html>

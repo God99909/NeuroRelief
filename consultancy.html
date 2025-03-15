@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultancy Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <img src="logo.png" alt="Logo" class="logo">
+    <a href="#" class="nav-link">Home</a>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-text">Book an Appointment</h1>
+  </section>
+
+  <section class="form-section">
+    <h2>Fill in Your Details</h2>
+    <form id="appointmentForm">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter your age" required>
+
+      <label for="depressionScore">Depression Score:</label>
+      <input type="number" id="depressionScore" placeholder="Enter your depression score" required>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" required>
+
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+    <div id="successMessage" class="success-box" style="display: none;">
+      Appointment booked successfully!
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Consultancy Services. All Rights Reserved.</p>
+  </footer>
+  <script>
+    document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+  const successMessage = document.getElementById("successMessage");
+  successMessage.style.display = "block";
+
+  // Hide success message after 3 seconds and redirect
+  setTimeout(() => {
+    successMessage.style.display = "none";
+    window.location.href = "articles.html"; // Redirect to the article page
+  }, 3000);
+});
+
+  </script>
+
+  <style>  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+  }
+  
+  .hero-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgb(255, 0, 0), 0 0 20px rgb(0, 255, 0), 0 0 30px rgb(0, 0, 255);
+  }
+  
+  .form-section {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #ff7043;
+  }
+  
+  .success-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: #cccccc;
+  }
+  </style>
+</body>
+</html>

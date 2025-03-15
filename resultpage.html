@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Test Results</title>
+    <link rel="stylesheet" href="css/resultpage.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <img src="img and video/logo.png" alt="Logo" class="logo">
+        <button class="home-btn" onclick="location.href='index.html'">Home</button>
+    </header>
+
+    <!-- Results Section -->
+    <section class="results-container">
+        <h1>Test Results for <span id="user-name">User</span></h1>
+        <p>Your responses have been analyzed. Here is your result:</p>
+
+        <div class="score-box">
+            <h2>Your Depression Score: <span id="final-score">Calculating...</span></h2>
+            <p id="result-message"></p>
+        </div>
+
+        <!-- Scale Image -->
+        <div class="scale-container">
+            <img src="img and video/bg3.png" alt="Depression Level Scale">
+        </div>
+
+        <!-- Retake Test Button -->
+        <button class="retake-btn" onclick="retakeTest()">Retake Test</button>
+    </section>
+
+    <!-- 🏥 Consultancy Section -->
+    <section class="consultancy-section">
+        <h2>Seeking Professional Help</h2>
+        <p>Talking to a professional can provide clarity and guidance on your mental well-being. If you're struggling, reach out today.</p>
+        <button class="consult-btn" onclick="location.href='consultancy.html'">Book an Appointment</button>
+    </section>
+
+    <!-- 📖 Suggested Articles Section (Improved Format) -->
+    <section class="suggested-articles">
+        <h2><span id="user-name-2">User</span>, Read These Articles for Help</h2>
+        <div class="articles-grid">
+            <div class="article-box">
+                <img src="anxity.png" alt="Anxiety">
+                <div class="article-text">
+                    <a href="fullArticle/article9.html">📖 Overcoming Anxiety</a>
+                    <p>Learn how to reduce anxiety and regain control of your emotions.</p>
+                </div>
+            </div>
+
+            <div class="article-box">
+                <img src="stress.png" alt="Stress">
+                <div class="article-text">
+                    <a href="fullArticle/article2.html">📖 How to Manage Stress</a>
+                    <p>Discover practical techniques to cope with daily stress effectively.</p>
+                </div>
+            </div>
+
+            <div class="article-box">
+                <img src="doubt.png" alt="Self Doubt">
+                <div class="article-text">
+                    <a href="fullArticle/article4.html">📖 Self Doubt</a>
+                    <p>Constantly questioning your worth and abilities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="article-box">
+                <img src="unloved.png" alt="Un Loved">
+                <div class="article-text">
+                    <a href="fullArticle/article6.html">📖  Feeling Unloved</a>
+                    <p>Believing that no one truly cares or understands you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="articles.html">Articles</a>
+        <a href="why chooseus.html">Why Choose Us</a>
+        <a href="contactUS.html">Contact Us</a>
+    </footer>
+
+    <script src="java/resultpage.js"></script>
+
+</body>
+</html>

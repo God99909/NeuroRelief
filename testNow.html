@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Well-being Test</title>
+    <link rel="stylesheet" href="C:\Users\sampa\OneDrive\Desktop\hackathone\css\testNow.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Website Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contactUS.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Assess Your Mental Well-being</h1>
+        <p>Take our self-assessment test and receive personalized insights to support your journey to better mental health.</p>
+        <a href="C:\Users\sampa\OneDrive\Desktop\hackathone\starttest.html" class="cta-button">Test Now</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-box">
+            <h2>Personalized Test</h2>
+            <p>Answer simple questions to evaluate your mental health and get instant feedback.</p>
+        </div>
+        <div class="feature-box">
+            <h2>Expert Articles</h2>
+            <p>Read insightful articles and guidance curated by mental health professionals.</p>
+        </div>
+        <div class="feature-box">
+            <h2>Community Support</h2>
+            <p>Engage with others, share experiences, and gain encouragement from our community.</p>
+        </div>
+    </section>
+    <section class="suggested-articles">
+        <div class="articles-container">
+            <div class="article-text">
+                <h2>Interact with these top suggested articles for more personalized solutions</h2>
+            </div>
+            <div class="article-list">
+                <div class="article">
+                    <h3><a href="C:\Users\sampa\OneDrive\Desktop\hackathone\fullArticle\article8.html">Understanding Depression: Signs and Symptoms</a></h3>
+                    <p>Learn about the early signs of depression and how to recognize them.</p>
+                </div>
+                <div class="article">
+                    <h3><a href="C:\Users\sampa\OneDrive\Desktop\hackathone\fullArticle\article4.html">5 Simple Ways to Improve Your Mental Well-being</a></h3>
+                    <p>Discover effective techniques to boost your mood and stay positive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Transparent black */
+    color: white;
+    padding: 15px 30px;
+    position: fixed; /* Keeps the header at the top while scrolling */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures it's always above other content */
+    backdrop-filter: blur(05px); /* Adds a slight blur effect */
+}
+
+header .logo img {
+    width: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #5ca9f1;
+}
+
+/* Hero Section */
+.hero {
+    background: url('img and video/bg5.avif') center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.feature-box {
+    background: rgb(22, 169, 228);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    background-color: #ecf0f1;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: 2s , box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Suggested Articles Section */
+.suggested-articles {
+    background: #749fca;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.articles-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 2000px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.article-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.article h3 {
+    font-size: 18px;
+}
+
+.article a {
+    text-decoration: none;
+    color: #e74c3c;
+    transition: color 0.3s ease;
+}
+
+.article a:hover {
+    color: #c0392b;
+}
+
+.article p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+
+</style>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NeuroRelief. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

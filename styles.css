@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect for Navigation Links */
+.nav-links a:hover {
+  color: #ff6600;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('../img and video/bg3.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* Test Now Button */
+.test-now-btn {
+  background-color: rgb(236, 109, 5);
+  color: white;
+  border-radius: 8px;
+  font-size: 22px;
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.test-now-btn:hover {
+  background-color: rgb(200, 90, 5);
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Section */
+.image-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Separate Hover Effect for Each Image */
+.image-item {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-item img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Individual Images */
+.image-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Clickable Text */
+.clickable-text {
+  margin-top: 20px;
+  display: flex;
+  gap: 300px;
+}
+
+.clickable-text a {
+  text-decoration: none;
+  color: #333;
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+}
+
+.clickable-text a:hover {
+  text-decoration: underline overline dotted red;
+  color: #ff6600;
+}
+
+/* Footer */
+footer {
+  background-image: url('../img and video/bg4.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.footer-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.footer-box button:hover {
+  background-color: #e65c00;
+}

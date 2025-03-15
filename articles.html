@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Page</title>
+    <link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="C:\Users\sampa\OneDrive\Desktop\hackathone\img and video\logo.png" alt="Logo" class="logo">
+        
+        <!-- 🔹 Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search articles..." onkeyup="filterArticles()">
+        </div>
+
+        <button class="login-btn" onclick="location.href='index.html'">Home</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="articles-container" id="articlesContainer">
+            
+            <script>
+                const articles = [
+                    { title: "Feeling Lost in Life? Here’s How to Find Your Purpose Again", author: "Sneha Majumdar", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article1.html" },
+                    { title: "10 Proven Ways to Overcome Depression and Regain Happiness", author: "Lohit Sarkar", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article2.html" },
+                    { title: "Why Do I Feel Empty? Understanding and Coping with Emotional Numbness", author: "Koushick Dey", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article3.html" },
+                    { title: "How to Stop Overthinking and Reduce Anxiety in Daily Life", author: "Nikhil Pandey", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article4.html" },
+                    { title: "Struggling with Motivation? Here’s How to Get Back on Track", author: "Sonia Hedge", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article5.html" },
+                    { title: "The Science of Dopamine: How to Naturally Boost Your Mood", author: "Kanu Das", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article6.html" },
+                    { title: "How to Deal with Loneliness: Practical Steps to Feel Less Alone", author: "Sahil poddar", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article7.html" },
+                    { title: "Depression or Just a Bad Day? Signs You Shouldn’t Ignore", author: "Sunil Sastri", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article8.html" },
+                    { title: "Healing from Past Trauma: Steps to Emotional Recovery", author: "Anupam Devgan", content: "", link: "file:///C:/Users/sampa/OneDrive/Desktop/hackathone/fullArticle/article9.html" },
+                ];
+
+                function renderArticles(filteredArticles) {
+                    const container = document.getElementById('articlesContainer');
+                    container.innerHTML = ""; // Clear previous articles
+
+                    filteredArticles.forEach((article, index) => {
+                        container.innerHTML += `
+                            <div class="article">
+                                <a href="${article.link}" class="article-title"><h2>${article.title}</h2></a>
+                                <p class="author">By: ${article.author}</p>
+                                <div class="article-actions">
+                                    <span class="vote">
+                                        <button class="upvote" onclick="vote(${index}, 1)">⬆️</button>
+                                        <span class="vote-count" id="vote-${index}">0</span>
+                                        <button class="downvote" onclick="vote(${index}, -1)">⬇️</button>
+                                    </span>
+                                    <span class="comment-btn">💬 Comment</span>
+                                    <span class="menu-btn">⋮</span>
+                                    <div class="menu">
+                                        <p onclick="uploadArticle()">Upload Article</p>
+                                    </div>
+                                </div>
+                                <div class="comment-section">
+                                    <input type="text" placeholder="Write a comment..." class="comment-input">
+                                    <button class="post-comment">Post</button>
+                                    <div class="comments"></div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                renderArticles(articles);
+            </script>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-section">
+            <h3>🔥 Top Rated Articles</h3>
+            <ul>
+                <li>Healing from Past Trauma: Steps to Emotional Recovery</li>
+                <li>Depression or Just a Bad Day? Signs You Shouldn’t Ignore</li>
+                <li>How to Deal with Loneliness: Practical Steps to Feel Less Alone</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>⭐ Most Suggested Articles</h3>
+            <ul>
+                <li>The Science of Dopamine: How to Naturally Boost Your Mood</li>
+                <li>Struggling with Motivation? Here’s How to Get Back on Track</li>
+                <li>How to Stop Overthinking and Reduce Anxiety in Daily Life</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>📈 Most Interacted Articles</h3>
+            <ul>
+                <li>Why Do I Feel Empty? Understanding and Coping with Emotional Numbness</li>
+                <li>10 Proven Ways to Overcome Depression and Regain Happiness</li>
+                <li>Feeling Lost in Life? Here’s How to Find Your Purpose Again</li>
+            </ul>
+        </div>
+    </footer>
+
+    <p class="rights"></p>
+
+    <script src="C:\Users\sampa\OneDrive\Desktop\hackathone\java\article.js"></script>
+
+    <!-- 🔹 JavaScript for Search Functionality -->
+    <script>
+        function filterArticles() {
+            let query = document.getElementById('searchBar').value.toLowerCase();
+            let filtered = articles.filter(article => 
+                article.title.toLowerCase().includes(query) || 
+                article.author.toLowerCase().includes(query)
+            );
+            renderArticles(filtered);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Test</title>
+    <link rel="stylesheet" href="C:\Users\sampa\OneDrive\Desktop\hackathone\css\startnow.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="C:\Users\sampa\OneDrive\Desktop\hackathone\img and video\logo.png" alt="Logo" class="logo">
+        <button class="home-btn" onclick="location.href='index.html'">Home</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Depression Assessment Test</h1>
+        <p class="hero-subtitle">Answer all the questions honestly to get more accurate results.</p>
+    </section>
+
+    <!-- User Info Form -->
+    <section class="user-info">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" required>
+        
+        <label for="suffering-time">How long have you been feeling this way?</label>
+        <select id="suffering-time">
+            <option value="1_month">1 Month</option>
+            <option value="3_months">3 Months</option>
+            <option value="6_months">6 Months</option>
+            <option value="1_year">1 Year</option>
+            <option value="2_years">2 Years</option>
+            <option value="5_years">5+ Years</option>
+        </select>
+
+        <button class="start-test">Start Test</button>
+    </section>
+
+    <!-- Question Container -->
+    <section class="test-container hidden">
+        <p class="question-count">Question <span id="current-question">1</span>/30</p>
+        <div class="question-box">
+            <p id="question-text">Question 1 will appear here...</p>
+            <div class="options">
+                <label><input type="radio" name="answer" value="No"> No</label>
+                <label><input type="radio" name="answer" value="Maybe"> Maybe</label>
+                <label><input type="radio" name="answer" value="Yes"> Yes</label>
+            </div>
+            <button class="skip-btn">Skip</button>
+        </div>
+
+        <div class="navigation">
+            <button class="prev-btn">Previous</button>
+            <button class="next-btn">Next</button>
+        </div>
+
+        <!-- Results Button (Initially Hidden) -->
+        <button class="results-btn hidden">View Results</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="C:\Users\sampa\OneDrive\Desktop\hackathone\privacypolicy.html" class="footer-link">Privacy Policy</a>
+        <a href="C:\Users\sampa\OneDrive\Desktop\hackathone\readMore.html" class="footer-link">Read More About Us</a>
+        <a href="C:\Users\sampa\OneDrive\Desktop\hackathone\why chooseus.html" class="footer-link">Why Choose Us</a>
+        <a href="C:\Users\sampa\OneDrive\Desktop\hackathone\contactUS.html" class="footer-link">Contact Us</a>
+    </footer>
+
+    <script src="C:\Users\sampa\OneDrive\Desktop\hackathone\java\startnow.js"></script>
+
+</body>
+</html>

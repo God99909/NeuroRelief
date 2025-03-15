@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #222;
+}
+
+.logo {
+    width: 50px;
+}
+
+.home-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background-color: #ff784e;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 40px;
+    background: #333;
+}
+
+/* Increase text size for better readability */
+.hero-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+}
+
+/* User Info Form */
+.user-info {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.user-info input, .user-info select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.start-test {
+    background-color: #ff5722;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Test Container - Increased Size */
+.test-container {
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    background: #333;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Question Count */
+.question-count {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Increase Question Text Size */
+#question-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prev-btn, .next-btn, .skip-btn {
+    background-color: #ff5722;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Results Button */
+.results-btn {
+    background-color: #28a745;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer - Fixed at the bottom */
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: #222;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Footer Link Styling */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Hover Effect on Footer Links */
+.footer-link:hover {
+    color: #ff5722;
+    transform: scale(1.1);
+}
